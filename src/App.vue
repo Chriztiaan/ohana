@@ -2,10 +2,7 @@
 	<v-app>
 		<v-content>
 			<v-card class="overflow-hidden">
-				<Topbar>
-					<Tabs :tab="tab" :tab-value.sync="tab"></Tabs>
-				</Topbar>
-				<TabHolder :tab="tab" :tab-value.sync="tab"></TabHolder>
+				<router-view></router-view>
 			</v-card>
 		</v-content>
 	</v-app>
@@ -13,25 +10,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Topbar from './components/Topbar.vue';
-import Tabs from './components/Tabs.vue';
-import TabHolder from './components/TabHolder.vue';
 
-export default Vue.extend({
-	components: {
-		Topbar,
-		Tabs,
-		TabHolder
-	},
-	data() {
-		return { tab: 1 };
-	},
-	watch: {
-		tab(a): void {
-			return console.log(a);
-		}
-	}
-});
+export default Vue.extend({});
 </script>
 
 <style>
