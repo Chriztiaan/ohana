@@ -1,0 +1,36 @@
+{
+	"name": "playground",
+	"version": "0.1.0",
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
+	},
+	"dependencies": {
+		"@mdi/font": "^3.8.95",
+		"core-js": "^2.6.5",
+		"eslint-plugin-prettier": "^3.1.0",
+		"vue": "^2.6.10",
+		"vuetify": "^2.0.0"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^2.0.0",
+		"@typescript-eslint/parser": "^2.0.0",
+		"@vue/cli-plugin-babel": "^3.10.0",
+		"@vue/cli-plugin-eslint": "^3.10.0",
+		"@vue/cli-plugin-typescript": "^3.10.0",
+		"@vue/cli-plugin-unit-jest": "^3.10.0",
+		"@vue/cli-service": "^3.10.0",
+		"@vue/eslint-config-prettier": "^5.0.0",
+		"@vue/eslint-config-typescript": "^4.0.0",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.16.0",
+		"eslint-plugin-vue": "^5.0.0",
+		"sass": "^1.22.9",
+		"sass-loader": "^7.1.0",
+		"ts-loader": "^6.0.2",
+		"typescript": "^3.4.5",
+		"vue-template-compiler": "^2.6.10"
+	}
+}
