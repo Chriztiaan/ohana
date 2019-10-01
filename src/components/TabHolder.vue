@@ -21,7 +21,10 @@
 					</v-btn>
 				</v-tab-item>
 				<v-tab-item key="3">
-					Calls
+					<Calls></Calls>
+					<v-btn color="orange lighten-2" class="action-primary" fixed bottom dark right fab>
+						<v-icon>mdi-phone-plus</v-icon>
+					</v-btn>
 				</v-tab-item>
 			</v-tabs-items>
 		</v-container>
@@ -33,9 +36,10 @@ import Vue from 'vue';
 import Camera from './Camera.vue';
 import Chats from './Chats.vue';
 import Status from './Status.vue';
+import Calls from './Calls.vue';
 
 export default Vue.extend({
-	components: { Camera, Chats, Status },
+	components: { Camera, Chats, Status, Calls },
 	props: {
 		tab: {
 			type: Number,

@@ -14,8 +14,7 @@ module.exports = {
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'@typescript-eslint/no-use-before-define': ['error', { functions: false }],
-		'@typescript-eslint/no-explicit-any': 'off',
-		'vue/no-deprecated-scope-attribute': 'error'
+		'@typescript-eslint/no-explicit-any': 'off'
 	},
 	parserOptions: {
 		parser: '@typescript-eslint/parser'

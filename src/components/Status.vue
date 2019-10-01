@@ -15,7 +15,9 @@
 			</v-list-item>
 		</v-list>
 		<v-list two-line class="py-0" subheader>
-			<v-subheader style="height: 36px" class="px-2 grey lighten-3 grey--text text--darken-2">Recent updates</v-subheader>
+			<v-subheader style="height: 36px" class="px-2 grey lighten-3 grey--text text--darken-2"
+				>Recent updates</v-subheader
+			>
 			<template v-for="(item, index) in items">
 				<v-divider v-if="index != 0" :key="index" inset></v-divider>
 				<v-list-item :key="item.title">

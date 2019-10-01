@@ -30,7 +30,7 @@
 		<v-list two-line class="py-0">
 			<template v-for="(item, index) in items">
 				<v-divider v-if="index != 0" :key="index" inset></v-divider>
-				<v-list-item :key="item.title" @click="alert(1)">
+				<v-list-item :key="item.subtitle" @click="alert(1)">
 					<v-list-item-avatar
 						@click.stop=""
 						@mousedown.stop="openDialog(item.title, item.avatar)"
@@ -42,18 +42,31 @@
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold">{{ item.title }}</v-list-item-title>
 						<v-list-item-subtitle>
-							<v-icon v-if="item.status == 'read'" size="18" class="mt-n1" color="blue lighten-2"
-								>mdi-check-all</v-icon
+							<v-icon
+								v-if="item.direction == 'incoming'"
+								size="18"
+								class="mt-n1"
+								:class="{
+									'red--text': !item.success,
+									'green--text': item.success
+								}"
+								>mdi-arrow-bottom-left</v-icon
 							>
-							<v-icon v-else-if="item.status == 'received'" size="18" class="mt-n1" color="grey lighten-1"
-								>mdi-check-all</v-icon
+							<v-icon
+								v-else-if="item.direction == 'outgoing'"
+								size="18"
+								class="mt-n1"
+								:class="{
+									'red--text': !item.success,
+									'green--text': item.success
+								}"
+								>mdi-arrow-top-right</v-icon
 							>
 							{{ item.subtitle }}
 						</v-list-item-subtitle>
 					</v-list-item-content>
 					<v-list-item-action class="ml-0">
-						<v-list-item-action-text v-text="item.time"></v-list-item-action-text>
-						<v-icon v-if="item.muted">mdi-volume-variant-off</v-icon>
+						<v-icon class="orange--text">mdi-phone</v-icon>
 					</v-list-item-action>
 				</v-list-item>
 			</template>
@@ -70,31 +83,39 @@ export default Vue.extend({
 		dialog: false,
 		items: [
 			{
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+				title: 'Ma',
+				direction: 'incoming',
+				success: true,
+				subtitle: '28 August, 4:45pm'
+			},
+			{
 				avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
 				title: 'Emma',
-				time: '9:14 pm',
-				status: 'read',
-				subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
+				direction: 'outgoing',
+				success: true,
+				subtitle: '(2) 26 August, 5:16pm'
 			},
 			{
 				avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
 				title: 'Ma',
-				time: '8:33 pm',
-				status: 'received',
-				subtitle: "Wish I could come, but I'm out of town this weekend."
+				direction: 'incoming',
+				success: true,
+				subtitle: '25 August, 11:59am'
 			},
 			{
-				avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-				title: 'Tjop',
-				time: '11:10 am',
-				subtitle: 'Do you have Paris recommendations? Have you ever been?'
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+				title: 'Ma',
+				direction: 'outgoing',
+				success: false,
+				subtitle: '24 August, 5:06pm'
 			},
 			{
-				avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-				title: 'Ohana: The first wedding',
-				time: 'Yesterday',
-				muted: true,
-				subtitle: 'Have any ideas about what we should get Heidi for her birthday?'
+				avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+				title: 'Ma',
+				direction: 'incoming',
+				success: false,
+				subtitle: '23 August, 6:26pm'
 			}
 		]
 	}),
