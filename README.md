@@ -1,5 +1,11 @@
 # Ohana
 
+## Screenshots:
+
+![Alt text](./src/assets/screenshots/screen_1.jpg?raw=true 'Chats')
+![Alt text](./src/assets/screenshots/screen_2.jpg?raw=true 'Chats')
+![Alt text](./src/assets/screenshots/screen_3.jpg?raw=true 'Chats')
+
 ## Project setup
 
 ```
@@ -29,7 +35,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
