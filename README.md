@@ -1,5 +1,7 @@
 # Ohana
 
+This project is about recreating the Android Whatsapp application with Vue and Vuetify. Android Whatsapp follows Material Design(<https://material.io/design/>), Vuetify happens to follow the same design specification. This means that you should be able to achieve a similar visual feel without introducing too much custom styling.
+
 ## Screenshots:
 
 ![Alt text](./src/assets/screenshots/screen_1.jpg?raw=true 'Chats')
