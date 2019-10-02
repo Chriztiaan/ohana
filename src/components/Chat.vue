@@ -2,7 +2,7 @@
 	<div>
 		<v-toolbar flat color="orange" dark height="64">
 			<!-- <v-toolbar color="orange" dark tile> -->
-			<v-btn icon class="ml-n3" width="32" height="32">
+			<v-btn icon class="ml-n3" width="32" height="32" @click="$router.go(-1)">
 				<v-icon>mdi-arrow-left</v-icon>
 			</v-btn>
 

@@ -9,7 +9,7 @@
 				</v-img>
 
 				<v-card-actions class="justify-center">
-					<v-btn class="mx-4" icon>
+					<v-btn class="mx-4" icon @click="$router.push({ name: 'chat' })">
 						<v-icon class="flip-icon orange--text">mdi-android-messages</v-icon>
 					</v-btn>
 
@@ -30,24 +30,16 @@
 		<v-list two-line class="py-0">
 			<template v-for="(item, index) in items">
 				<v-divider v-if="index != 0" :key="index" inset></v-divider>
-				<v-list-item :key="item.title" @click="alert(1)">
-					<v-list-item-avatar
-						@click.stop=""
-						@mousedown.stop="openDialog(item.title, item.avatar)"
-						@touchstart.stop=""
-					>
+				<v-list-item :key="item.title" @click="$router.push({ name: 'chat' })">
+					<v-list-item-avatar @click.stop="" @mousedown.stop="openDialog(item.title, item.avatar)" @touchstart.stop="">
 						<v-img aspect-ratio="1" width="55" max-width="55" height="55" :src="item.avatar"></v-img>
 					</v-list-item-avatar>
 
 					<v-list-item-content>
 						<v-list-item-title class="font-weight-bold">{{ item.title }}</v-list-item-title>
 						<v-list-item-subtitle>
-							<v-icon v-if="item.status == 'read'" size="18" class="mt-n1" color="blue lighten-2"
-								>mdi-check-all</v-icon
-							>
-							<v-icon v-else-if="item.status == 'received'" size="18" class="mt-n1" color="grey lighten-1"
-								>mdi-check-all</v-icon
-							>
+							<v-icon v-if="item.status == 'read'" size="18" class="mt-n1" color="blue lighten-2">mdi-check-all</v-icon>
+							<v-icon v-else-if="item.status == 'received'" size="18" class="mt-n1" color="grey lighten-1">mdi-check-all</v-icon>
 							{{ item.subtitle }}
 						</v-list-item-subtitle>
 					</v-list-item-content>
@@ -63,6 +55,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
 	data: () => ({
 		name: '',

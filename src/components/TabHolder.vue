@@ -7,26 +7,28 @@
 				</v-tab-item>
 				<v-tab-item key="1">
 					<Chats></Chats>
-					<v-btn color="orange lighten-2" class="action-1" fixed bottom dark right fab>
-						<v-icon class="flip-icon">mdi-android-messages</v-icon>
-					</v-btn>
 				</v-tab-item>
 				<v-tab-item key="2">
 					<Status></Status>
-					<v-btn color="grey lighten-3" class="action-secondary mr-2" fixed bottom small dark right fab>
-						<v-icon color="grey darken-1">mdi-pencil</v-icon>
-					</v-btn>
-					<v-btn color="orange lighten-2" class="action-primary" fixed bottom dark right fab>
-						<v-icon>mdi-instagram</v-icon>
-					</v-btn>
 				</v-tab-item>
 				<v-tab-item key="3">
 					<Calls></Calls>
-					<v-btn color="orange lighten-2" class="action-primary" fixed bottom dark right fab>
-						<v-icon>mdi-phone-plus</v-icon>
-					</v-btn>
 				</v-tab-item>
 			</v-tabs-items>
+			<v-btn v-if="tab == 1" color="orange lighten-2" class="action-1" fixed bottom dark right fab>
+				<v-icon class="flip-icon">mdi-android-messages</v-icon>
+			</v-btn>
+			<template v-if="tab == 2">
+				<v-btn color="grey lighten-3" class="action-secondary mr-2" fixed bottom small dark right fab>
+					<v-icon color="grey darken-1">mdi-pencil</v-icon>
+				</v-btn>
+				<v-btn color="orange lighten-2" class="action-primary" fixed bottom dark right fab>
+					<v-icon>mdi-instagram</v-icon>
+				</v-btn>
+			</template>
+			<v-btn v-if="tab == 3" color="orange lighten-2" class="action-primary" fixed bottom dark right fab>
+				<v-icon>mdi-phone-plus</v-icon>
+			</v-btn>
 		</v-container>
 	</v-sheet>
 </template>
@@ -59,7 +61,8 @@ export default Vue.extend({
 	},
 	mounted() {
 		this.tabs = this.tab;
-	}
+	},
+	methods: {}
 });
 </script>
 
