@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- hide-on-scroll  -->
-		<v-app-bar elevation="2" color="orange" dark scroll-target="#playground-example">
+		<v-app-bar class="elevation-1" color="orange" dark scroll-target="#playground-example">
 			<v-toolbar-title>Ohana</v-toolbar-title>
 
 			<div class="flex-grow-1"></div>

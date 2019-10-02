@@ -17,6 +17,6 @@
 		},
 		"lib": ["esnext", "dom", "dom.iterable", "scripthost"]
 	},
-	"include": ["./**/*.ts", "./**/*.vue"],
+	"include": ["./**/*.ts", "./**/*.vue", "src/vuetify.js"],
 	"exclude": ["node_modules"]
 }

@@ -24,6 +24,10 @@ export default Vue.extend({});
 	transform: scaleX(-1);
 }
 
+.lean-left-icon {
+	transform: rotate(-45deg);
+}
+
 .main {
 	background-color: rgba(200, 200, 200);
 }
