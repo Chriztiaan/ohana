@@ -39,7 +39,7 @@
 						<v-list-item-title class="font-weight-bold">{{ item.title }}</v-list-item-title>
 						<v-list-item-subtitle>
 							<v-icon v-if="item.status == 'read'" size="18" class="mt-n1" color="blue lighten-2">mdi-check-all</v-icon>
-							<v-icon v-else-if="item.status == 'received'" size="18" class="mt-n1" color="grey lighten-1">mdi-check-all</v-icon>
+							<v-icon v-else-if="item.status == 'received'" size="18" class="mt-n1" color="grey lighten-0">mdi-check-all</v-icon>
 							{{ item.subtitle }}
 						</v-list-item-subtitle>
 					</v-list-item-content>

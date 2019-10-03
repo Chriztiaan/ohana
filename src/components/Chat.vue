@@ -1,48 +1,28 @@
 <template>
 	<div>
-		<v-toolbar color="orange elevation-5" dark height="64">
-			<!-- <v-toolbar color="orange" dark tile> -->
-			<v-btn icon class="ml-n3" width="32" height="32" @click="$router.go(-1)">
-				<v-icon>mdi-arrow-left</v-icon>
-			</v-btn>
-
-			<v-avatar>
-				<v-img aspect-ratio="1" width="45" max-width="45" height="45" :src="avatar"></v-img>
-			</v-avatar>
-			<v-toolbar-title>
-				<v-list-item two-line class="pl-2 pr-0">
-					<v-list-item-content>
-						<v-list-item-title>{{ title }}</v-list-item-title>
-						<v-list-item-subtitle class="white--text">{{ time }}</v-list-item-subtitle>
-					</v-list-item-content>
-				</v-list-item>
-			</v-toolbar-title>
-			<v-spacer />
-
-			<v-btn icon width="40" height="40">
-				<v-icon>mdi-video</v-icon>
-			</v-btn>
-
-			<v-btn icon width="40" height="40">
-				<v-icon>mdi-phone</v-icon>
-			</v-btn>
-
-			<v-menu left bottom transition="scroll-x-reverse-transition">
-				<template v-slot:activator="{ on }">
-					<v-btn icon v-on="on">
-						<v-icon>mdi-dots-vertical</v-icon>
-					</v-btn>
-				</template>
-
-				<v-list class="py-0">
-					<v-list-item v-for="n in options" :key="n" @click="() => {}">
-						<v-list-item-title>{{ n }}</v-list-item-title>
-					</v-list-item>
-				</v-list>
-			</v-menu>
-		</v-toolbar>
+		<ChatTopBar></ChatTopBar>
 		<v-sheet id="" class="overflow-y-auto" max-height="600">
-			<v-container class="pa-0 grey lighten-2" style="height: 90vh;">
+			<v-container class="pa-0 pt-2 grey lighten-2 back subtitle-2" style="height: 90vh;">
+				<v-card class="mx-3 mb-1 px-2 py-1" width="80%">
+					We should be able to get there on time right?
+					<span class="float-right mt-1">
+						<span class="caption grey--text text--darken-1"> {{ messages[0].time }} </span>
+					</span>
+				</v-card>
+				<v-card class="mx-3 mb-2 px-2 py-1" width="80%">
+					I mean, surely? It can't happen ag
+					<span class="float-right mt-1">
+						<span class="caption grey--text text--darken-1"> {{ messages[0].time }} </span>
+					</span>
+				</v-card>
+				<v-card class="mx-3 mb-1 px-2 py-1 float-right orange lighten-3 " width="80%">
+					Don't hold up your breathe. Todd always takes years to get ready. It will be fine either way.
+					<span class="float-right mt-1" style="height:18px;">
+						<span class="caption grey--text text--darken-1"> {{ messages[0].time }} </span>
+						<!-- <v-icon size="18" class="mt-n1" color="grey lighten-0">mdi-check-all</v-icon> -->
+						<v-icon size="18" class="mt-n1" color="blue lighten-2">mdi-check-all</v-icon>
+					</span>
+				</v-card>
 				<ChatBox></ChatBox>
 			</v-container>
 		</v-sheet>
@@ -51,17 +31,28 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import ChatTopBar from './ChatTopBar.vue';
 import ChatBox from './ChatBox.vue';
 
 export default Vue.extend({
-	components: { ChatBox },
+	components: { ChatTopBar, ChatBox },
 	data() {
 		return {
-			avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-			title: 'Shane',
-			time: 'Online',
-			options: ['View contact', 'Media', 'Search', 'Mute notifications', 'Wallpaper', 'More']
+			messages: [
+				{
+					direction: 'outgoing',
+					text: 'I am on the internet.',
+					time: '8:18pm'
+				}
+			]
 		};
 	}
 });
 </script>
+
+<style scoped>
+.back {
+	background-image: url('../assets/background.png');
+	background-size: 140% 140%;
+}
+</style>
