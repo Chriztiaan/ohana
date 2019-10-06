@@ -21,7 +21,7 @@
 						<v-icon class="orange--text">mdi-video</v-icon>
 					</v-btn>
 
-					<v-btn class="mx-4" icon>
+					<v-btn class="mx-4" icon @click="$router.push('profile')">
 						<v-icon class="orange--text">mdi-alert-circle-outline</v-icon>
 					</v-btn>
 				</v-card-actions>

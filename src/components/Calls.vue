@@ -31,11 +31,7 @@
 			<template v-for="(item, index) in items">
 				<v-divider v-if="index != 0" :key="index" inset></v-divider>
 				<v-list-item :key="item.subtitle" @click="alert(1)">
-					<v-list-item-avatar
-						@click.stop=""
-						@mousedown.stop="openDialog(item.title, item.avatar)"
-						@touchstart.stop=""
-					>
+					<v-list-item-avatar @click.stop="" @mousedown.stop="openDialog(item.title, item.avatar)" @touchstart.stop="">
 						<v-img aspect-ratio="1" width="55" max-width="55" height="55" :src="item.avatar"></v-img>
 					</v-list-item-avatar>
 
