@@ -9,6 +9,8 @@ This project is about recreating the Android Whatsapp application with Vue and V
 ![Alt text](./src/assets/screenshots/screen_3.jpg?raw=true 'Preview')
 ![Alt text](./src/assets/screenshots/screen_4.jpg?raw=true 'Calls')
 ![Alt text](./src/assets/screenshots/screen_5.jpg?raw=true 'Chat')
+![Alt text](./src/assets/screenshots/screen_6.jpg?raw=true 'Profile 1')
+![Alt text](./src/assets/screenshots/screen_7.jpg?raw=true 'Profile 2')
 
 ## Project setup
 
